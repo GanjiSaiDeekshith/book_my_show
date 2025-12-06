@@ -1,3 +1,5 @@
+/* ------------------ Default Desktop Styles ------------------ */
+
 .menu-row {
     border-top: 1px solid transparent;
     padding-top: 5px;
@@ -12,6 +14,7 @@
     font-size: 14px;
 }
 
+/* Recommended Section */
 .recommended-section {
     padding: 20px 40px;
     background: #f0f3f7;
@@ -31,9 +34,11 @@
 .section-header .see-all {
     color: #e71b29;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .movie-grid {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
@@ -41,14 +46,15 @@
 
 .poster {
     position: relative;
-    overflow: hidden;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .poster img {
     width: 100%;
     height: 330px;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 .promoted {
@@ -79,19 +85,22 @@
 
 .genre {
     color: #6c757d;
+    font-size: 14px;
 }
 
 .image img {
     width: 100%;
-    margin-top: 20px;
     border-radius: 10px;
+    margin-top: 20px;
 }
 
 /* Footer */
 .footer-link {
     color: #999;
     text-decoration: none;
+    transition: 0.3s;
     font-size: 11px;
+    letter-spacing: 1px;
     text-align: center;
 }
 
@@ -101,6 +110,7 @@
 
 .footer-link i {
     font-size: 30px;
+    margin-bottom: 5px;
 }
 
 .line-logo {
@@ -117,36 +127,31 @@
 
 .line-logo img {
     width: 100px;
+    margin: 0 15px;
 }
 
 .social-icons {
     text-align: center;
+    padding: 10px;
+}
+
+.copyright {
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 
-/* ----------------------------------------------------- */
-/* ------------------ RESPONSIVE CODE ------------------ */
-/* ----------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* ------------------ RESPONSIVE STYLES -------------------- */
+/* --------------------------------------------------------- */
 
-/* Mobile Sign In button fix */
-@media (max-width: 600px) {
 
-    .topbar {
-        display: flex;
+/* ---------- Tablets (768px and below) ---------- */
+@media (max-width: 768px) {
+
+    .menu-row {
         flex-direction: column;
-        gap: 8px;
-    }
-
-    .search-box {
-        height: 45px !important;
-        font-size: 16px;
-    }
-
-    .btn-signin {
-        height: 45px !important;
-        font-size: 16px !important;
-        width: 100%;
-        border-radius: 8px;
+        text-align: center;
+        gap: 10px;
     }
 
     .movie-grid {
@@ -155,11 +160,125 @@
     }
 
     .poster img {
-        height: 230px;
+        height: 260px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .image img {
+        height: auto;
+    }
+
+    .footer-link i {
+        font-size: 25px;
     }
 }
 
-/* Single column for very small phones */
-@media (max-width: 450px) {
+
+/* ---------- Mobile Devices (600px and below) ---------- */
+@media (max-width: 600px) {
+
+    /* Navbar */
+    .menu-row {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .menu-row ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .nav-link {
+        font-size: 12px !important;
+        padding: 4px !important;
+    }
+
+    /* Movies Grid */
     .movie-grid {
-        grid-temp
+        grid-template-columns: repeat(2, 1fr);   /* OR use 1 column: repeat(1,1fr) */
+        gap: 15px;
+    }
+
+    .poster img {
+        height: 200px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .image img {
+        margin: 10px 0;
+    }
+
+    /* Footer responsiveness */
+    .bottom-icons {
+        padding: 10px;
+    }
+
+    .footer-link {
+        font-size: 10px;
+    }
+
+    .footer-link i {
+        font-size: 22px;
+    }
+
+    .line-logo img {
+        width: 80px;
+    }
+}
+
+
+/* ---------- Small Phones (450px and below) ---------- */
+@media (max-width: 450px) {
+
+    .movie-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .poster img {
+        height: 220px;
+    }
+
+    .section-header h2 {
+        font-size: 18px;
+    }
+
+    .recommended-section {
+        padding: 10px 15px;
+    }
+
+    .footer-link i {
+        font-size: 20px;
+    }
+
+    .footer-link {
+        font-size: 9px;
+    }
+}
+
+
+/* ---------- Very Small Phones (350px and below) ---------- */
+@media (max-width: 350px) {
+
+    .poster img {
+        height: 180px;
+    }
+
+    .movie-card h3 {
+        font-size: 14px;
+    }
+
+    .genre {
+        font-size: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 16px;
+    }
+}
