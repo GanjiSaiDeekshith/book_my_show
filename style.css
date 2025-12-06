@@ -139,11 +139,9 @@
     background-color: rgba(0, 0, 0, 0.05);
 }
 
-
 /* --------------------------------------------------------- */
 /* ------------------ RESPONSIVE STYLES -------------------- */
 /* --------------------------------------------------------- */
-
 
 /* ---------- Tablets (768px and below) ---------- */
 @media (max-width: 768px) {
@@ -176,9 +174,57 @@
     }
 }
 
+/* ---------- Mobile Devices (600px and below) ---------- */
+@media (max-width: 600px) {
+
+    /* 1. Ensure the container aligns them properly */
+    .container-fluid.d-flex.align-items-center {
+        gap: 5px; /* Add small gap between elements */
+    }
+
+    /* 2. Style the Search Input to have a specific height */
+    .form-control {
+        height: 38px !important; /* Standard Bootstrap height */
+        font-size: 13px; /* Prevent zooming on text entry */
+    }
+
+    /* 3. Style the Sign In Button to match the input exactly */
+    .btn-danger {
+        height: 38px !important; /* Match the input height exactly */
+        padding: 0 10px !important; /* Adjust padding to fit text */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px; /* Match input font size */
+        white-space: nowrap; /* Keep text on one line */
+        margin-left: 5px !important; /* Override the ms-3 if needed for space */
+        width: auto; /* Allow it to shrink/grow based on text */
+    }
+
+    /* ... Keep your existing Grid/Menu styles below ... */
+    .menu-row {
+        flex-direction: column;
+        padding-top: 0;
+    }
+    /* ... rest of your code ... */
+}
+
+
+
+
+
+
+
 
 /* ---------- Mobile Devices (600px and below) ---------- */
 @media (max-width: 600px) {
+
+        /* Button line height change for mobile */
+    /* .btn-danger ms-3 {
+        --bs-btn-line-height: 0.8 !important;
+        height: 45px !important;
+        width: 100%;
+    } */
 
     /* Navbar */
     .menu-row {
@@ -212,7 +258,10 @@
     }
 
     .image img {
-        margin: 10px 0;
+        margin: 10px 10px;
+    }
+    .image{
+        padding-bottom: 20px;
     }
 
     /* Footer responsiveness */
@@ -233,9 +282,14 @@
     }
 }
 
-
 /* ---------- Small Phones (450px and below) ---------- */
 @media (max-width: 450px) {
+
+    .btn-danger ms-3 {
+        --bs-btn-line-height: 0.8 !important;
+        height: 45px !important;
+        width: 100%;
+    }
 
     .movie-grid {
         grid-template-columns: repeat(1, 1fr);
@@ -262,9 +316,13 @@
     }
 }
 
-
 /* ---------- Very Small Phones (350px and below) ---------- */
 @media (max-width: 350px) {
+    .btn-danger ms-3 {
+        --bs-btn-line-height: 0.8 !important;
+        height: 45px !important;
+        width: 100%;
+    }
 
     .poster img {
         height: 180px;
