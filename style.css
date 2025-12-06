@@ -1,3 +1,5 @@
+/* ------------------ Default Desktop Styles ------------------ */
+
 .menu-row {
     border-top: 1px solid transparent;
     padding-top: 5px;
@@ -91,9 +93,6 @@
     border-radius: 10px;
     margin-top: 20px;
 }
-.image{
-    margin-bottom: 20px;
-}
 
 /* Footer */
 .footer-link {
@@ -138,4 +137,148 @@
 
 .copyright {
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+/* --------------------------------------------------------- */
+/* ------------------ RESPONSIVE STYLES -------------------- */
+/* --------------------------------------------------------- */
+
+
+/* ---------- Tablets (768px and below) ---------- */
+@media (max-width: 768px) {
+
+    .menu-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .poster img {
+        height: 260px;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
+    }
+
+    .image img {
+        height: auto;
+    }
+
+    .footer-link i {
+        font-size: 25px;
+    }
+}
+
+
+/* ---------- Mobile Devices (600px and below) ---------- */
+@media (max-width: 600px) {
+
+    /* Navbar */
+    .menu-row {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .menu-row ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .nav-link {
+        font-size: 12px !important;
+        padding: 4px !important;
+    }
+
+    /* Movies Grid */
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);   /* OR use 1 column: repeat(1,1fr) */
+        gap: 15px;
+    }
+
+    .poster img {
+        height: 200px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .image img {
+        margin: 10px 0;
+    }
+
+    /* Footer responsiveness */
+    .bottom-icons {
+        padding: 10px;
+    }
+
+    .footer-link {
+        font-size: 10px;
+    }
+
+    .footer-link i {
+        font-size: 22px;
+    }
+
+    .line-logo img {
+        width: 80px;
+    }
+}
+
+
+/* ---------- Small Phones (450px and below) ---------- */
+@media (max-width: 450px) {
+
+    .movie-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .poster img {
+        height: 220px;
+    }
+
+    .section-header h2 {
+        font-size: 18px;
+    }
+
+    .recommended-section {
+        padding: 10px 15px;
+    }
+
+    .footer-link i {
+        font-size: 20px;
+    }
+
+    .footer-link {
+        font-size: 9px;
+    }
+}
+
+
+/* ---------- Very Small Phones (350px and below) ---------- */
+@media (max-width: 350px) {
+
+    .poster img {
+        height: 180px;
+    }
+
+    .movie-card h3 {
+        font-size: 14px;
+    }
+
+    .genre {
+        font-size: 12px;
+    }
+
+    .section-header h2 {
+        font-size: 16px;
+    }
 }
